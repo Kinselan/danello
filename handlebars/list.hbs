@@ -1,0 +1,16 @@
+<h1>{{list_name}}</h1>
+<ul class="cards" list-id="{{list_id}}">
+{{#each cards}}
+	<li class= "card" data-id="{{cardId}}" data-desc="{{desc}}"><input type="text" readonly value="{{title}}"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+{{/each}}
+</ul>
+<div list-id={{list_id}}>
+  <div class="addCard">Add a card...</div>
+  <div class="addCardForm">
+    <form autocomplete="off">
+      <textarea></textarea>
+      <a class='addCardButton'>Add</a>
+      <a class='cancelAddCardButton'>Cancel</a>
+    </form>
+  </div>
+</div>

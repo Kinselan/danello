@@ -1,0 +1,42 @@
+include /_mixins
+
+doctype html
+html
+	head
+		title Danello
+
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+
+		+stylesheet("application")
+
+		+javascript("vendor/all")
+		script(src="http://rubaxa.github.io/Sortable/Sortable.js")
+
+		+javascript("handlebars_templates")
+
+
+
+	body
+		header
+			form
+				input(type='text' id='search', autocomplete="off")
+			.logo
+				h1 Danello
+
+		main
+			ul#lists
+			#addListWidget
+				form(id="addListForm", autocomplete="off")
+					input(id="addListInput", placeholder="Add a list...")
+
+		.overlay
+
+		+javascript("application")
+		+javascript("models/card")
+		+javascript("collections/list")
+		+javascript("views/list", "views/card")
+
+		script(type="text/javascript").
+			App.init(!{JSON.stringify(list_data)});

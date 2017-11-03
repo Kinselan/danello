@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 into jade index!
+  ul
+    each list in list_data
+      li
+        p hello
+        h2= list.listName

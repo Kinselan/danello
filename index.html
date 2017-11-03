@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Danello</title>
+		<meta charset="UTF-8" />
+		<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<script src="public/javascripts/vendor/all.js"></script>
+		<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+		<link rel="stylesheet" href="public/stylesheets/application.css" />
+	</head>
+	<body>
+		<header>
+			<form>
+				<input type='text'>
+			</form>
+			<div class="logo">
+				<i class="fa fa-tasks" aria-hidden="true"></i>
+				<h1>Danello</h1>
+			</div>
+		</header>
+
+		<main>
+			<ul class="lists">
+				<li class="list">
+					<h1>First List</h1>
+					<ul class="cards" list-id="1">
+						<li>First card<i class="fa fa-pencil" aria-hidden="true"></i></li>
+						<li>Second card<i class="fa fa-pencil" aria-hidden="true"></i></li>
+						<li>Third card</li>
+						<li>Fourth card</li>
+					</ul>
+					<div class="addCard">Add a card...</div>
+				</li>
+				<li class="list">
+					<h1>Conquer the World</h1>
+					<ul class="cards" list-id="2">
+						<li>Make money</li>
+						<li>Move to Thailand</li>
+						<li>Retire</li>
+					</ul>
+				</li>
+				<li class="list">
+					<h1>Technologies I've learned</h1>
+					<ul class="cards" list-id="3">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Javascript</li>
+						<li>Express</li>
+						<li>Stylus</li>
+						<li>Jade/Pug</li>
+						<li>Grunt</li>
+						<li>Bower</li>
+					</ul>
+				</li>
+				<li id="addList">
+					<input class="addList" type="text" placeholder="Add a list..." />
+				</li>
+			</ul>
+	  </main>
+
+		<div class="overlay">
+			<div class="modal">
+				<input type='text' value="Move to Thailand"></input>
+				<div class='cardInfo'>
+
+					<!-- <p>There is really not much to do for this task. Just, you know, pack up your stuff and get out! The rest you can make up when you get there.</p> -->
+
+
+					<textarea>There is really not much to do for this task. Just, you know, pack up your stuff and get out! The rest you can make up when you get there.</textarea>
+				</div>
+				<a class="button" href="#">Edit</a>
+				<a class="button delete" href="#">Delete</a>
+			</div>
+		</div>
+
+
+
+
+		<script>
+
+
+
+
+			var l1 = $("ul[list-id='1']").get(0);
+			var l2 = $("ul[list-id='2']").get(0);
+			var l3 = $("ul[list-id='3']").get(0);
+			
+			var sortable1 = Sortable.create(l1, {group: 'awesome'});
+			var sortable2 = Sortable.create(l2, {group: 'awesome'});
+			var sortable3 = Sortable.create(l3, {group: 'awesome'});
+
+
+
+
+
+		</script>
+
+		<script><!-- Prevent CSS transitions from firing on pageload --></script>
+	</body>
+</html>
